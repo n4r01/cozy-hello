@@ -4,7 +4,7 @@
   "cozy-displayName": "Cozy Hello",
   "version": "1.0.1",
   "description": "",
-  "icon-path": "main_icon.png"
+  "icon-path": "main_icon.png",
   "cozy-permissions": {
     "contact": {
       "description": "Why do my application needs to access this document type"
