@@ -3,7 +3,7 @@ function updateContactList(){
     if (err != null) return alert(err);
     cozysdk.run('Contact', 'all', {}, function(err, res) {
       if (err != null) return alert(err);
-      var contacts = JSON.parse("" + res);
+      var contacts = res;
       /* contacts == [
         {id:"323274828329", key:"Jane;Willson"},
         {id:"323274827428", key:"John;Smith"}
