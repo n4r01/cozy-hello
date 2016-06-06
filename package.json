@@ -2,7 +2,7 @@
   "name": "cozy-hello",
   "cozy-type": "static",
   "cozy-displayName": "Cozy Hello",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "icon-path": "main_icon.png",
   "cozy-permissions": {
