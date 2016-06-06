@@ -5,4 +5,9 @@
   "version": "1.0.0",
   "description": "",
   "icon-path": "main_icon.png"
+  "cozy-permissions": {
+    "contact": {
+      "description": "Why do my application needs to access this document type"
+    }
+  }
 }
