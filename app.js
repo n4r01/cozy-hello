@@ -1,9 +1,9 @@
 function updateContactList(){
-  cozysdk.defineRequest('Contact', 'all', 'doc => emit(doc.n)', function(err, res) {
+  cozysdk.defineRequest('Contact', 'all', 'function(doc){ return emit(doc.n)}', function(err, res) {
     if (err != null) return alert(err);
     cozysdk.run('Contact', 'all', {}, function(err, res) {
       if (err != null) return alert(err);
-      var contacts = res;
+      var contacts = JSON.parse(JSON.stringify(res));
       /* contacts == [
         {id:"323274828329", key:"Jane;Willson"},
         {id:"323274827428", key:"John;Smith"}
@@ -23,4 +23,5 @@ function render(contacts){
   document.querySelector('.contact-list').innerHTML = HTML;
 }
 
+document.querySelector('.send').addEventListener('change', onSendChanged);
 document.addEventListener("DOMContentLoaded", updateContactList);
