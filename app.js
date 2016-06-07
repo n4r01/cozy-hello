@@ -1,5 +1,5 @@
 function updateContactList(){
-  cozysdk.defineRequest('Contact', 'all', 'function(doc) { emit(doc.n); }', function(err, res) {
+  cozysdk.defineRequest('Contact', 'all', 'doc => emit(doc.n)', function(err, res) {
     if (err != null) return alert(err);
     cozysdk.run('Contact', 'all', {}, function(err, res) {
       if (err != null) return alert(err);
