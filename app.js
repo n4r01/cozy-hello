@@ -23,5 +23,17 @@ function render(contacts){
   document.querySelector('.contact-list').innerHTML = HTML;
 }
 
+function onSendChanged(){
+  var contactName = document.querySelector('.send').value.trim();
+  var values = {n: contactName};
+  cozysdk.create('Contact', values, function(err, res) {
+    if (err != null) return alert(err);
+    // res.id == "8239283928326"
+    document.querySelector('.send').value = '';
+    updateContactList();
+  });
+}
+
+
 document.querySelector('.send').addEventListener('change', onSendChanged);
 document.addEventListener("DOMContentLoaded", updateContactList);
