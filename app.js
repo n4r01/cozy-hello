@@ -81,7 +81,7 @@ function updateContactList() {
 				if (err != null) {
 					return alert(err);
 				} else {
-					var contacts = JSON.parse("" + res);
+					var contacts = res;
 					contacts.forEach(function(contactName) {
 						contactName.key = contactName.key.replace(/ /g, '\u00a0');
 					});
