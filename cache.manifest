@@ -4,3 +4,6 @@ index.html
 app.js
 vendor/cozysdk-client.js
 # base.css
+
+NETWORK:
+*
