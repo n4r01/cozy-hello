@@ -25,7 +25,7 @@ function onSendChanged() {
 		}
 	});
     */
-    alert('contact createed');
+    alert('contact created');
 }
 
 function onUpdatePressed(event) {
