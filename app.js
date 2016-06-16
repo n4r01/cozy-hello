@@ -16,7 +16,7 @@ function onSendChanged() {
 	var contact = {
 		n: contactName.trim()
 	};
-	cozysdk.create('Contact', contact, function(err, res) {
+/*	cozysdk.create('Contact', contact, function(err, res) {
 		if (err != null) {
 			return alert(err);
 		} else {
@@ -24,6 +24,8 @@ function onSendChanged() {
 			updateContactList();
 		}
 	});
+    */
+    alert('contact createed');
 }
 
 function onUpdatePressed(event) {
