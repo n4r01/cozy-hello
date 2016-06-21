@@ -23,6 +23,23 @@
 
     function updateContactList() {
         var contacts = [];
+        cozysdk.defineRequest('Contact', 'all', 'function(doc) { emit(doc.n); }', function(err, res) {
+		if (err != null) {
+			return alert(err);
+		} else {
+			cozysdk.run('Contact', 'all', {}, function(err, res) {
+				if (err != null) {
+					return alert(err);
+				} else {
+					res.forEach(function(contact) {
+						contact.key = contact.key.replace(/ /g, '\u00a0');
+                        console.log(contact);
+                        contacts.push(contact);
+					});
+				}
+			});
+		}
+	});
         contactStore.iterate((contact, contactKey, indice) => {
             contacts.push(JSON.parse(contact));
         }).then(() => {
@@ -98,7 +115,7 @@
     function onButtonSyncClicked(event) {
         console.log('toto');
         contactStore.iterate((contact, contactKey, indice) => {
-            cozysdk.create('Contact', contact, function(err, obj){
+            cozysdk.create('Contact', JSON.parse(contact), function(err, obj){
                 console.log(obj.id)
             })
         })
