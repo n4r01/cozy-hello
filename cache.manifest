@@ -1,9 +1,8 @@
 CACHE MANIFEST
-# Revision: 2
-index.html
-app.js
-vendor/cozysdk-client.js
-# base.css
+# Rev 3
+index.html  
+script.js
+localforage.js
 
 NETWORK:
 *
